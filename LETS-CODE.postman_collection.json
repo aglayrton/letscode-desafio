@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "7c697ccd-40e6-4244-a482-5c6fb0a5056c",
+		"name": "LETS-CODE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User paged",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDU1Mzc5ODEsInVzZXJfbmFtZSI6Im1hcmlhQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbIlJPTEVfUExBWUVSIiwiUk9MRV9BRE1JTiJdLCJqdGkiOiI3NWEzOGY0OC03OWE2LTRiMjgtODhmZi0xNjYwOTc0MDk0NmIiLCJjbGllbnRfaWQiOiJkZXNhZmlvIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.b3_FKi3rzYvIT2cBUqgXq5Y4kDSHf8u6_2PJHeOHiwM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVzYWZpbzpzZWNyZXQxMjM="
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/users?page=0&size=12&sort=firstName",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "12"
+								},
+								{
+									"key": "sort",
+									"value": "firstName"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Aglayrton\",\n\t\"lastName\": \"Julião\",\n\t\"email\": \"juliao@gmail.com\",\n\t\"password\": \"j123\",\n\t\"roles\":[\n\t\t{\n\t\t\t\"id\":1\n\t\t},\n\t\t{\n\t\t\t\"id\":2\n\t\t}\t\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updated User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Aglayrton\",\n\t\"lastName\": \"Julião\",\n\t\"email\": \"alex@gmail.com\",\n\t\"password\": \"j123\",\n\t\"roles\":[\n\t\t{\n\t\t\t\"id\":1\n\t\t}\t\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/users/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDU1Mzc4NzMsInVzZXJfbmFtZSI6Im1hcmlhQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbIlJPTEVfUExBWUVSIiwiUk9MRV9BRE1JTiJdLCJqdGkiOiIyN2YzNDIwNS1lMjUxLTRkYjAtYTljMi0wNDVjOWVjZDcwMjIiLCJjbGllbnRfaWQiOiJkZXNhZmlvIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.Q-TWicJM-clrnWkUb9lQhlKYSnhdQRkkhFWgo2_LDkQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "secret123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "desafio",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZGVzYWZpbzpzZWNyZXQxMjM="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "maria@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/oauth/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Film",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDU1ODY3MzYsInVzZXJfbmFtZSI6ImFsZXhAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9QTEFZRVIiXSwianRpIjoiNTRlNWNiNTktNmFiMC00MjVkLWI5OGYtMDViODlkMzZiN2EyIiwiY2xpZW50X2lkIjoiZGVzYWZpbyIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.7zHOSDDoeXEfG5YEcFQE6Ee4clFLtLR9dhTpfSe2tkk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/quiz",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ranking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDU1NTk4NjAsInVzZXJfbmFtZSI6Im1hcmlhQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbIlJPTEVfUExBWUVSIiwiUk9MRV9BRE1JTiJdLCJqdGkiOiIzZTA3ZjllNC00MzMxLTRlYzgtYjgzOS01NTIwM2RhZWNjZDMiLCJjbGllbnRfaWQiOiJkZXNhZmlvIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.GaO3lINeWI7FkXnRsWPCquJradRU-lstYz-ZmX-mTKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/quiz",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Play",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDU1ODY3MzYsInVzZXJfbmFtZSI6ImFsZXhAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9QTEFZRVIiXSwianRpIjoiNTRlNWNiNTktNmFiMC00MjVkLWI5OGYtMDViODlkMzZiN2EyIiwiY2xpZW50X2lkIjoiZGVzYWZpbyIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.7zHOSDDoeXEfG5YEcFQE6Ee4clFLtLR9dhTpfSe2tkk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imdb\": [\r\n        { \"id\": 1072,\r\n        \"filmName\": \"Godzilla vs. Kong\",\r\n        \"selected\" : false,\r\n        \"note\":8.5\r\n        },\r\n        { \"id\": 7209,\r\n        \"filmName\": \"Uncharted: The Nathan Drake Collection\",\r\n        \"selected\" : true,\r\n        \"note\":8.9\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/quiz/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
